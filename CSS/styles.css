@@ -1,0 +1,87 @@
+/* ===== ESTILOS GERAIS ===== */
+
+/* O seletor * aplica o estilo a TODOS os elementos da página */
+* {
+  font-family: Helvetica;
+  /* Define a fonte padrão do site */
+
+  margin: 0;
+  padding: 0;
+  /* Remove margens e espaçamentos padrões do navegador */
+}
+
+body {
+  background-color: #333;
+  /* Cor de fundo escura para toda a página */
+}
+
+/* ===== TÍTULO ===== */
+
+.title {
+  text-align: center;
+  /* Centraliza o texto horizontalmente */
+
+  font-size: 2rem;
+  /* Define o tamanho da fonte do título */
+
+  padding: 2rem;
+  /* Espaçamento interno ao redor do texto */
+
+  color: #fff;
+  /* Cor branca do texto */
+
+  background-color: #222;
+  /* Fundo um pouco mais escuro que o body */
+}
+
+/* ===== CONTAINER DE IMAGENS ===== */
+
+.container {
+  width: 70vw;
+  /* Define a largura como 70% da largura da tela (viewport width) */
+
+  margin: 0 auto;
+  /* Centraliza o container horizontalmente */
+}
+
+/* Cada bloco que contém uma imagem e sua legenda */
+.image-container {
+  margin-bottom: 1rem;
+  /* Espaço abaixo de cada imagem */
+
+  padding-bottom: 1rem;
+  /* Espaço interno inferior */
+
+  border-bottom: 1px solid #444;
+  /* Linha separadora entre as imagens */
+}
+
+/* ===== IMAGENS ===== */
+
+.image-container img {
+  display: block;
+  /* Remove comportamento inline da imagem */
+
+  margin: 2rem auto 1rem;
+  /* Centraliza a imagem e cria espaçamentos:
+     - 2rem em cima
+     - auto nas laterais
+     - 1rem embaixo */
+
+  width: 1000px;
+  height: 600px;
+  /* Define tamanho fixo das imagens */
+}
+
+/* ===== LEGENDA DAS IMAGENS ===== */
+
+.image-container p {
+  text-align: center;
+  /* Centraliza o texto da legenda */
+
+  font-weight: bold;
+  /* Deixa o texto em negrito */
+
+  color: #fff;
+  /* Texto branco para contraste com o fundo escuro */
+}
