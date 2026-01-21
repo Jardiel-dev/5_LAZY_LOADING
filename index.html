@@ -1,77 +1,43 @@
 <!DOCTYPE html>
-<!-- Define o tipo do documento como HTML5 -->
-
 <html lang="pt-br">
-<!-- Início do documento HTML e definição do idioma como português do Brasil -->
-
 <head>
-    <meta charset="UTF-8">
-    <!-- Define o conjunto de caracteres para suportar acentos e caracteres especiais -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Faz o site se adaptar corretamente a celulares e tablets (responsividade) -->
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lazy Load com JavaScript</title>
-    <!-- Título da página que aparece na aba do navegador -->
-
-    <link rel="stylesheet" href="CSS/styles.css">
-    <!-- Importa o arquivo CSS responsável pelo estilo da página -->
-
+    <link rel="stylesheet" href="CSS/styles.css" />
     <script src="js/script.js" defer></script>
-    <!-- Importa o JavaScript
-         'defer' garante que o JS só execute após o HTML ser carregado -->
 </head>
-
 <body>
-    <!-- Corpo da página (tudo que aparece para o usuário) -->
+    <header>
+        <h1 class="title">Florestas pelo Mundo</h1>
+    </header>
 
-    <h1 class="title">Florestas pelo mundo</h1>
-    <!-- Título principal da página, estilizado via CSS pela classe "title" -->
-
-    <div class="image-container">
-        <!-- Container de uma imagem + legenda -->
-
-        <img src="https://plus.unsplash.com/premium_photo-1663950774999-8da6f0553d8c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmxvcmVzdGFzfGVufDB8fDB8fHww"
-             alt="Floresta 1">
-        <!-- Imagem da floresta
-             'alt' é importante para acessibilidade e SEO -->
-
-        <p>Floresta 1</p>
-        <!-- Texto/legenda da imagem -->
-    </div>
-
-    <!-- Os blocos abaixo seguem exatamente o mesmo padrão,
-         mudando apenas a imagem e o texto -->
-
-    <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1605810257524-b66f77c5066d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmxvcmVzdGFzfGVufDB8fDB8fHww"
-             alt="Floresta 2">
-        <p>Floresta 2</p>
-    </div>
-
-    <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1723134081655-8604231b879a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGZsb3Jlc3Rhc3xlbnwwfHwwfHx8MA%3D%3D"
-             alt="Floresta 3">
-        <p>Floresta 3</p>
-    </div>
-
-    <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1603612692333-7bac35e43500?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODh8fGZsb3Jlc3Rhc3xlbnwwfHwwfHx8MA%3D%3D"
-             alt="Floresta 4">
-        <p>Floresta 4</p>
-    </div>
-
-    <div class="image-container">
-        <img src="https://plus.unsplash.com/premium_photo-1664300792059-863ccfe55932?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxmbG9yZXN0YXN8ZW58MHx8MHx8fDA%3D"
-             alt="Floresta 5">
-        <p>Floresta 5</p>
-    </div>
-
-    <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1660910755433-dd345059382e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjMyfHxmbG9yZXN0YXN8ZW58MHx8MHx8fDA%3D"
-             alt="Floresta 6">
-        <p>Floresta 6</p>
-    </div>
-
+    <main class="container">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=10&q=60" alt="Floresta 1" />
+            <p>Floresta 1</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=10&q=60" alt="Floresta 2" />
+            <p>Floresta 2</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=10&q=60" alt="Floresta 3" />
+            <p>Floresta 3</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=10&q=60" alt="Floresta 4" />
+            <p>Floresta 4</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZvcmVzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=10&q=60" alt="Floresta 5" />
+            <p>Floresta 5</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZvcmVzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=10&q=60" alt="Floresta 6" />
+            <p>Floresta 6</p>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,40 +1,31 @@
-// Seleciona TODAS as imagens que estão dentro de .image-container
-// O resultado é uma NodeList (parecido com um array)
 const images = document.querySelectorAll(".image-container img");
 
-// Cria um IntersectionObserver
-// Ele serve para "observar" quando um elemento entra ou sai da tela (viewport)
+const observerOptions = {
+  root: null,
+  rootMargin: "0px 0px 300px 0px", // Carrega a imagem 300px antes dela aparecer
+  threshold: 0
+};
+
 const observer = new IntersectionObserver((entries, observer) => {
-
-  // entries é uma lista de elementos observados com informações
   entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const image = entry.target;
 
-    // entry.isIntersecting retorna true quando o elemento aparece na tela
-    // Se a imagem AINDA NÃO estiver visível, a função para aqui
-    if (!entry.isIntersecting) return;
+      // Substitui o parâmetro de largura baixa (10) por alta (1000)
+      const highResSrc = image.src.replace("&w=10&", "&w=1000&");
+      image.src = highResSrc;
 
-    // entry.target é o elemento que está sendo observado (a imagem)
-    const image = entry.target;
+      // Quando a imagem terminar de baixar, removemos o blur via CSS
+      image.onload = () => {
+        image.classList.add("loaded");
+      };
 
-    // Aqui acontece o Lazy Load de verdade
-    // O src da imagem é modificado para carregar uma versão maior
-    image.src = image.src.replace("&w=10&", "&w=1000&");
-
-    // Depois que a imagem já carregou, paramos de observá-la
-    // Isso melhora a performance
-    observer.unobserve(image);
+      // Para de observar para economizar recursos
+      observer.unobserve(image);
+    }
   });
-}, {
-  // Objeto de configurações do IntersectionObserver
-  // Está vazio, então usa os valores padrão:
-  // root = viewport
-  // threshold = 0
-});
+}, observerOptions);
 
-
-// Para cada imagem encontrada no início...
 images.forEach((image) => {
-
-  // Dizemos ao observer para começar a observar essa imagem
   observer.observe(image);
 });
